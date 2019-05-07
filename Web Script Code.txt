@@ -1,0 +1,30 @@
+function doGet(e){
+  var ss = SpreadsheetApp.openByUrl("Your Spread Sheet URL");
+  //Give your Sheet name here
+  var sheet = ss.getSheetByName("Sheet1");
+
+  insert(e,sheet);
+
+}
+
+function doPost(e){
+  var ss = SpreadsheetApp.openByUrl("Your Spread Sheet URL");
+  //Give your Sheet name here
+  var sheet = ss.getSheetByName("Sheet1");
+
+  insert(e,sheet);
+
+}
+
+
+
+function insert(e,sheet){
+ 
+  // reciving scanned data from client i.e android app
+  var sdata = e.parameter.sdata;
+  
+  var date = new Date()
+  
+  sheet.appendRow([date,sdata]);
+  
+}
